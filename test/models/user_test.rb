@@ -40,12 +40,7 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
-  test "email addresses should be unique" do
-    duplicate_user = @user.dup
-    duplicate_user.email = @user.email.upcase
-    @user.save
-    assert duplicate_user.valid?
-  end
+
   
     test "email addresses should be saved as lower-case" do
     mixed_case_email = "foo@example.com"
@@ -65,5 +60,8 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
   
 end
