@@ -29,7 +29,7 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'rails-tutorial-mhartl.c9users.io' # Don't use this literally; use your local dev host instead
+  host = 'https://fbeef4e7f2fb4b66a0fd9fa2751eb5f2.vfs.cloud9.us-east-2.amazonaws.com' # Don't use this literally; use your local dev host instead
   # Use this on the cloud IDE.
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Use this if developing on localhost.
